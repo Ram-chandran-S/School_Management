@@ -1,0 +1,49 @@
+div {
+  border: 1px solid black;
+  width: 300px;
+  padding: 20px;
+  position: relative;
+  top: 100px;
+  text-align: center;
+  left: 35%;
+  font-size: large;
+  background-color: silver;
+  border-radius: 25px;
+  box-shadow: 10px 10px 10px 10px gray;
+}
+button {
+  height: 50px;
+  width: 250px;
+  margin: 5px;
+  text-align: center;
+}
+a {
+  margin-top: -5px;
+}
+h5 {
+  font-size: medium;
+  margin-top: 12px;
+  font-style: italic;
+  font-variant: small-caps;
+  color: blue;
+}
+h3 {
+  font-style: italic;
+}
+button:hover {
+  transition-duration: 5s;
+  transform-style: preserve-3d;
+  transition: ease-in-out;
+  transform: scaleX(1.1);
+  color: red;
+  h5 {
+    color: red;
+  }
+}
+body {
+  background-image: url("./assert/bg1.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 100% 100%;
+}

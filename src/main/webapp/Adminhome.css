@@ -1,0 +1,62 @@
+body {
+  background-color: #77d8f0;
+}
+td,
+th {
+  border: 2px solid black;
+  padding: 20px 30px;
+  height: 0px;
+}
+#table {
+  border-spacing: 50px;
+  border-collapse: collapse;
+  height: 400px;
+  padding: 30px;
+  background-color: rgb(222, 250, 253);
+  
+}
+table {
+  border-collapse: collapse;
+  background-color: whitesmoke;
+  width: 1000px;
+  min-height:460px;
+}
+#parent {
+  position: relative;
+  top: 35px;
+  left: 100px;
+  border: 2px solid rgb(222, 250, 253);
+  display: inline-block;
+  
+}
+#thname {
+  width: 500px;
+}
+.button {
+  width: 80px;
+}
+#button {
+  display: inline-block;
+  background-color: rgb(222, 250, 253);
+  padding: 30px;
+  width: 1000px;
+}
+button {
+  width: 47%;
+  margin-left: 5px;
+  height: 30px;
+}
+a:link,a:active,a:visited{
+    text-decoration: none;
+    color: red;
+
+}
+button:hover{
+    background-color: burlywood;
+}
+#delete,#edit{
+	width: 50px;
+	color: red;
+}
+
+

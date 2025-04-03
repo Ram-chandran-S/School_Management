@@ -1,0 +1,73 @@
+body {
+  background-image: url("./assert/bg6.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  font-variant: small-caps;
+  font-size: medium;
+  font-family: cursive;
+  font-style: italic;
+  font-weight: 100px;
+}
+table {
+  border-spacing: 40px;
+  text-align: center;
+}
+lable,
+input {
+  height: 35px;
+}
+input {
+  width: 400px;
+}
+input:enabled {
+  padding: 5px;
+  background-color: transparent;
+  color: rgb(27, 77, 214);
+  font-size: large;
+  font-variant: small-caps;
+  background-color: rgb(252, 252, 252);
+  opacity: 1;
+  cursor: inherit;
+  text-align: center;
+  font-weight: 50px;
+  border-radius: 30px;
+  border-bottom-color: sandybrown;
+  border-bottom-style: ridge;
+  border-bottom-width: 3px;
+  font-style: inherit;
+}
+input:focus {
+  border: 2px solid green;
+  background-color: rgb(231, 186, 170);
+  transition-duration: 1s;
+  transform-style: preserve-3d;
+  transform: scaleX(1.1);
+  filter: hue-rotate(100%);
+}
+button,
+#button {
+  color: red;
+  width: 60%;
+  height: 50px;
+  font-size: large;
+  font-weight: 50px;
+  border: 2px solid black;
+  border-radius: 3px;
+  background-color: rgb(250, 212, 175);
+  font-style: oblique;
+  font-variant: small-caps;
+}
+button:hover,
+#button:hover {
+  transition-duration: 1s;
+  transform-style: preserve-3d;
+  transform: scaleX(1.1);
+  background-color: lime;
+  color: blue;
+}
+#mess{
+  text-align: end;
+  padding-right: 200px;
+  
+}

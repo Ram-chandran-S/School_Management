@@ -1,0 +1,18 @@
+body {
+  background-color: #77d8f0;
+}
+td,
+th {
+  border: 1px solid blue;
+  padding: 20px 30px;
+  height: 0px;
+}
+table {
+  border-spacing: 50px;
+  border-collapse: collapse;
+}
+#parent {
+  /*position: relative;
+	top: 100px;
+	left: 10px;*/
+}
