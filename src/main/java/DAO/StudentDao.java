@@ -60,13 +60,23 @@ public class StudentDao {
 	
 	public Student FindStudent(int id) throws SQLException {
 		Connection con = getConnection();
-		PreparedStatement st = con.prepareStatement("select * from studentmanagement.admin where id = ? ");
+		PreparedStatement st = con.prepareStatement("select * from studentmanagement.student where id = ? ");
 		st.setInt(1, id);
 		ResultSet res = st.executeQuery();
 		while(res.next()) {
 			return new Student(res.getInt(1), res.getString(2), res.getInt(3),res.getInt(4), res.getInt(5));
 		}
 		return null;
+	}
+	public Boolean checkStudent(int id,String name) throws SQLException {
+		Connection con = getConnection();
+		PreparedStatement st = con.prepareStatement("select * from studentmanagement.student where id = ? and Name=?");
+		st.setInt(1, id);
+		st.setString(2, name);
+		ResultSet res = st.executeQuery();
+		while(res.next()) {
+				return true;
+		} return false;
 	}
 	
 	public int deleteStudent(int id) throws SQLException {

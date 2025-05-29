@@ -64,7 +64,7 @@
         <%!  List<Student> l=null,ll=null; %>
         <% l=(List<Student>)request.getAttribute("list");
             ll=(List<Student>)request.getSession().getAttribute("list");%>
-       <% if (l!=null && ll == null){ %>
+       <% if (l !=null && ll != null){ %>
        <% for(Student s : l){%>
         	<tr>
             <td><%=s.getId()%></td>
@@ -76,11 +76,11 @@
             <td><a href="deleteStudent?id=<%= s.getId()%>"><button class="but" id="delete" style="color:red; width: 50px;">Delete</button></a></td>
             </tr>
         <%} }%>
-        <% if (l==null && ll != null){ %>
+        <% if ( l == null && ll != null){ %>
        <% for(Student s : ll){%>
         	<tr>
             <td><%=s.getId()%></td>
-            <td><%=s.getName()%></td>
+            <td><%=s.getName()%></td>``	`
             <td><%=s.getPhysics() %></td> 
             <td><%=s.getChemistry() %></td>
             <td><%=s.getMaths() %></td>

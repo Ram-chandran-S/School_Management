@@ -3,7 +3,6 @@ package Servlets;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,35 +14,36 @@ import javax.servlet.http.HttpSession;
 
 import DAO.StudentDao;
 import DTO.Student;
-
-@WebServlet("/AdminLogin")
-public class AdminLgin extends HttpServlet {
+@WebServlet("/StudentLogin")
+public class StudentLogin extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		StudentDao s = new StudentDao();
 		Connection con = s.getConnection();
-		String email = req.getParameter("email");
-		String password = req.getParameter("password");
+		int id = Integer.parseInt(req.getParameter("id"));
+		String userName = req.getParameter("UserName");
+		System.out.println(id+" "+userName);
 		try {
-			if(s.FindAdmin(email, password)) {
+			if(s.checkStudent(id, userName)) {
+				Student data = s.FindStudent(id);
+				int total = data.getChemistry()+data.getPhysics()+data.getMaths();
 				HttpSession session = req.getSession();
-				session.setAttribute("email", email);
-				session.setAttribute("password", password);
-				session.setAttribute("list", s.findAllStudent());
+				session.setAttribute("studentDTO", data);
+				session.setAttribute("totalmark", total);
 				
-				req.setAttribute("list", s.findAllStudent());
-				RequestDispatcher dispatcher = req.getRequestDispatcher("home.jsp");
+				req.setAttribute("data", data);
+				RequestDispatcher dispatcher = req.getRequestDispatcher("Student.jsp");
 				dispatcher.forward(req, resp);
 			}
 			else {
-				req.setAttribute("mess", "password or email is incorrect");
-				req.getRequestDispatcher("adminLogin.jsp").include(req, resp);
+				req.setAttribute("mess", "id or userName is incorrect");
+				req.getRequestDispatcher("studentLogin.jsp").include(req, resp);
 			}
 		} catch (Exception e) {
 			
 		
-			req.setAttribute("mess", "There is no Data found Please Signin");
-			req.getRequestDispatcher("adminLogin.jsp").include(req, resp);
+			req.setAttribute("mess", "There is no Data found Please Contact your class Advisor");
+			req.getRequestDispatcher("studentLogin.jsp").include(req, resp);
 		}
 		finally {
 			try {
@@ -54,5 +54,4 @@ public class AdminLgin extends HttpServlet {
 			}
 		}
 	}
-
 }

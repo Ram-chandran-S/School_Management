@@ -12,7 +12,7 @@
 <div> 
 <h3>Student Management</h3>
 <a href="adminLogin.jsp"><button><h5>Admin Login</h5></button></a>
-<a href="adminLogin.jsp"><button><h5>Student Login</h5></button></a>
+<a href="studentLogin.jsp"><button><h5>Student Login</h5></button></a>
  
  
 </div>
